@@ -27,6 +27,8 @@ python write_dataset.py
 ```
 python inference.py <path to image.jpg> <chin_1 or nose_1> <n or p>
 ```
+# DOI
+[![DOI](https://zenodo.org/badge/291075337.svg)](https://zenodo.org/badge/latestdoi/291075337)
 
 # Citation
 
