@@ -1,0 +1,6 @@
+name,path,min_factor,max_factor,comment
+chin_1,chin_1.ckpt,-400000,400000,
+chin_2,chin_2.ckpt,-300000,300000,
+nose_1,nose_1.ckpt,-300000,300000,
+nose_2,nose_2.ckpt,-300000,300000,
+cheek_1,cheek_1.ckpt,-300000,300000,
