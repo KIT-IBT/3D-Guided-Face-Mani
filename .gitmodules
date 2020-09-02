@@ -1,0 +1,6 @@
+[submodule "submodules/face3d"]
+	path = submodules/face3d
+	url = https://github.com/YadiraF/face3d.git
+[submodule "submodules/PyTorch3DDFA"]
+	path = submodules/PyTorch3DDFA
+	url = https://github.com/cleardusk/3DDFA.git
