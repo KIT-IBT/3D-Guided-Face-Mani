@@ -1,3 +1,6 @@
 .DS_Store
 __init__.py
 data/*
+__pycache__
+submodules/PyTorch3DDFA/*
+submodules/face3d/*

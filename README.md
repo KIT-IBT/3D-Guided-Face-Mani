@@ -1,7 +1,10 @@
 # 3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery
-*This repository is still work in progress!!!*
-
 This repository contains the code and the download links to run the generator G on samples of the AFLW2000 dataset.
+
+*Work in progress!!!*
+
+ToDO: Add script for training
+
 
 ## Requirements
 To install and run our scripts you need:
@@ -58,18 +61,22 @@ cd submodules/3DDFA_Release
 
 #### 3DDFA
 *Note: 3DDFA and Face3D share identical code for rendering and 3DMM processing*
-```
-mv submodules/3DDFA submodules/PyTorch3DDFA
-```
 
 ```
-cd ../3DDFA/utils/cython
+cd ../PyTorch3DDFA/utils/cython
 python setup.py build_ext -i
 ```
 #### Face3D
 ```
 cd ../../../face3d/face3d/mesh/cython/
 python setup.py build_ext -i
+```
+
+This is a bit hacky: Create uncommited init.py's to let python see the
+submodules as packages
+```
+cd ../../../../..
+touch submodules/PyTorch3DDFA/__init__.py submodules/face3d/__init__.py
 ```
 
 ### Models and configs
@@ -83,33 +90,67 @@ cp submodules/3DDFA_Release/Matlab/ModelGeneration/Model_Shape.mat \
 ```
 
 
-### Download datasets
+### Download and create datasets
+## AFLW2000
 Go to the [3DDFA website](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm) and download the AFLW2000-3D dataset. Then extract it into "data/datasets/AFLW2000"
 
-# Run
-### Create AFLW2000 dataset
+## 300W-LP (only used for training!)
+Go to the [3DDFA website](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm) and download the 300W-LP dataset.
+Then extract it into "data/datasets/300W_LP"
+
+Next, create a small validation dataset to track the training progress:
 ```
-python write_dataset.py
+mkdir data/datasets/300W_LP/validset data/datasets/300W_LP/validset_Flip 
+mv data/datasets/300W_LP/LFPW/LFPW_image_test_000[0-4]* data/datasets/300W_LP/validset/
+mv data/datasets/300W_LP/LFPW_Flip/LFPW_image_test_000[0-4]* data/datasets/300W_LP/validset_Flip/
 ```
 
+Create dataset with PNCC renderings and shape modifications. This should run
+without errors if you set up all configs and models correctly!
+This might take up to several days. You can speed up this process by creating multiple runs
+on different subdirectories of the 300W-LP (change "write_dataset.py"
+accordingly.)
+
+```
+python write_dataset.py 300W-LP 
+```
+
+## Run
 ### Run inference
+To test the model on the AFLW2000 dataset, you have multiple options
+
+#### 1. Test different modifications ('nose_1' or 'chin_1') and different
+   scalar multipliers ('p', 'n', or a floating number to linearly scale the
+   size of the chin e.g. '-200000'):
 ```
-python inference.py <path to image.jpg> <chin_1 or nose_1> <n or p>
+python run_inference.py data/datasets/AFLW2000/image00006.jpg -mult n -mod chin_1 -o data/output_1
+python run_inference.py data/datasets/AFLW2000/image00006.jpg -mult p -mod chin_1 -o data/output_1
+python run_inference.py data/datasets/AFLW2000/image00006.jpg -mult -200000 -mod chin_1 -o data/output_1
+python run_inference.py data/datasets/AFLW2000/image00006.jpg -mult p -mod nose_1 -o data/output_1
 ```
+The results can be seen in data/output_1 
+*Note: The network works best for frontal faces combined with chin modifications.
+However, the results for nose modifications and large pose rotations are often
+not very realistic or accurate. Feel free to try to come up with a better model by improving the
+training strategy or the network architecture*
+
+
+#### 2. Visualize "modification-grids" for all images of the AFLW2000 dataset
+This will create a prediction grid for every image of the 2000 images in the AFLW2000
+dataset
+```
+python run_inference.py data/datasets/AFLW2000 -o data/output_2
+```
+
+The prediction grid is structured as follows:
+|sn+sc|sc  |ln+sc|
+|sn   |None|ln   |
+|sn+lc|lc  |ln+lc|
+
+with sn=smaller nose, ln=larger nose, sc=smaller chin, lc=larger chin.
+
 # DOI
 [![DOI](https://zenodo.org/badge/291075337.svg)](https://zenodo.org/badge/latestdoi/291075337)
 
 # Citation
-
-<!---
-submodules: 
-- face3d
-- 3DDFA-Pytorch
-
-paste into configs:
-- FaceProfilingRelease_v1.1/ModelGeneration/Model_Shape.mat
-- FaceProfilingRelease_v1.1/Model_Expression.mat
-- PyTorch_3DDFA/visualize/tri.mat
-- shape_mods
--->
-# 3D-Face-Manipu
+ToDo

@@ -1,8 +1,7 @@
 import torch
 import numpy as np
 import scipy.io as sio
-from morphable_model.face3d.face3d import mesh
-
+from submodules.face3d.face3d import mesh
 
 class MorphabelModel300W():
 
@@ -10,9 +9,9 @@ class MorphabelModel300W():
 
         self.use_torch = use_torch
 
-        bfm_model = sio.loadmat('../data/configs/Model_Shape.mat')
-        exp_model = sio.loadmat('../data/configs/Model_Expression.mat')
-        self.tri = sio.loadmat('../data/configs/tri.mat')['tri']
+        bfm_model = sio.loadmat('data/configs/Model_Shape.mat')
+        exp_model = sio.loadmat('data/configs/Model_Expression.mat')
+        self.tri = sio.loadmat('data/configs/tri.mat')['tri']
 
         self.tri = self.tri - 1
 
