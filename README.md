@@ -89,6 +89,8 @@ cp submodules/3DDFA_Release/Matlab/ModelGeneration/Model_Shape.mat \
    data/configs/
 ```
 
+Download models from [here](LINK TO IEEE) and copy them to "data/configs"
+
 
 ### Download and create datasets
 ## AFLW2000
@@ -115,13 +117,27 @@ accordingly.)
 python write_dataset.py 300W-LP 
 ```
 
+## Render synthetic dataset (only used for training)
+1. To use random background images, download the IndoorCVPR dataset from [here](http://web.mit.edu/torralba/www/indoor.html) and extract the folder into "data/datasets/Images"
+2. Follow the instructions in "submodules/face3d/examples/Data/BFM/readme.md" (*Note: If you already downloaded the BFM installed the 3DDFA_Release (see above), then you can skip a few steps. The important thing is that you create the file "BFM.mat" that we need to render random textures from the BFM model*)
+3. Copy the BFM file to the configs
+```
+cp submodules/face3d/examples/Data/BFM/Out/BFM.mat data/configs/
+```
+
+4. ToDo: Let user create stats_list
+5. Render synthetic dataset (50k with chin modifications, 50k with nose modifications, 10k+10k with white background). This might take a few hours:
+```
+python render_synthetic_dataset.py
+```
+
+
 ## Run
 ### Run inference
 To test the model on the AFLW2000 dataset, you have multiple options
 
-#### 1. Test different modifications ('nose_1' or 'chin_1') and different
-   scalar multipliers ('p', 'n', or a floating number to linearly scale the
-   size of the chin e.g. '-200000'):
+#### 1. Test different modifications
+E.g. 'nose_1' or 'chin_1' and different scalar multipliers ('p', 'n', or a floating number to linearly scale the size of the chin e.g. '-200000'):
 ```
 python run_inference.py data/datasets/AFLW2000/image00006.jpg -mult n -mod chin_1 -o data/output_1
 python run_inference.py data/datasets/AFLW2000/image00006.jpg -mult p -mod chin_1 -o data/output_1
