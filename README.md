@@ -144,7 +144,8 @@ python run_inference.py data/datasets/AFLW2000/image00006.jpg -mult -200000 -mod
 python run_inference.py data/datasets/AFLW2000/image00006.jpg -mult p -mod nose_1 -o data/output_1
 ```
 The results can be seen in data/output_1 
-*Note: The network works best for frontal faces combined with chin modifications.
+
+*Note: The network works best for frontal faces combined with chin modifications.  
 However, the results for nose modifications and large pose rotations are often
 not very realistic or accurate. Feel free to try to come up with a better model by improving the
 training strategy or the network architecture*
@@ -157,10 +158,10 @@ dataset
 python run_inference.py data/datasets/AFLW2000 -o data/output_2
 ```
 
-The prediction grid is structured as follows:
-|sn+sc|sc  |ln+sc|
-|sn   |None|ln   |
-|sn+lc|lc  |ln+lc|
+The prediction grid is structured as follows:  
+|sn+sc|sc  |ln+sc|  
+|sn   |None|ln   |  
+|sn+lc|lc  |ln+lc|  
 
 with sn=smaller nose, ln=larger nose, sc=smaller chin, lc=larger chin.
 
