@@ -1,5 +1,5 @@
 # 3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery
-This repository yields the code to the corresponding paper *3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery*
+This repository yields the code to the corresponding paper *3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery*  
 (Submitted to IEEE Transactions on Image Processing). 
 
 *Work in progress!!!*
@@ -92,10 +92,10 @@ Download models from [here](LINK TO IEEE) and copy them to "data/configs"
 
 
 ### Download and create datasets
-## AFLW2000
+#### AFLW2000
 Go to the [3DDFA website](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm) and download the AFLW2000-3D dataset. Then extract it into "data/datasets/AFLW2000"
 
-## 300W-LP (only used for training!)
+#### 300W-LP (only used for training!)
 Go to the [3DDFA website](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm) and download the 300W-LP dataset.
 Then extract it into "data/datasets/300W_LP"
 
@@ -116,7 +116,7 @@ accordingly.)
 python write_dataset.py 300W-LP 
 ```
 
-## Render synthetic dataset (only used for training)
+#### Render synthetic dataset (only used for training)
 1. To use random background images, download the IndoorCVPR dataset from [here](http://web.mit.edu/torralba/www/indoor.html) and extract the folder into "data/datasets/Images"
 2. Follow the instructions in "submodules/face3d/examples/Data/BFM/readme.md" (*Note: If you already downloaded the BFM installed the 3DDFA_Release (see above), then you can skip a few steps. The important thing is that you create the file "BFM.mat" that we need to render random textures from the BFM model*)
 3. Copy the BFM file to the configs
