@@ -162,7 +162,9 @@ The prediction grid is structured as follows:
 
 |---|---|---|
 |sn+sc|sc  |ln+sc|  
+|---|---|---|
 |sn   |None|ln   |  
+|---|---|---|
 |sn+lc|lc  |ln+lc|  
 |---|---|---|
 
