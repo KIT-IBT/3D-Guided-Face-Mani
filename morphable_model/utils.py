@@ -107,9 +107,6 @@ def render_diff(alpha_mod, alpha, alpha_exp, angles, t3d, f, image_size=(450, 45
                                             f=f,
                                             img_size=image_size
                                            )
-#    image_vertices = mesh.transform.to_image(vertices,
-#                                             450,
-#                                             450)
     img = crender_colors(vertices.T, BFM_model.tri.T, colors.T,
                          450,
                          450, c=3)
