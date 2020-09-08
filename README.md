@@ -6,7 +6,7 @@ This repository yields the code to the corresponding paper *3D-Guided Face Manip
 
 
 ## Requirements
-To install and run our scripts you need:
+To install and run our scripts you need:  
 	- Matlab (If you don't have a licence, there might be a workaround (see below))  
 	- A python environment like anaconda  
 	- A Nvidia GPU with CUDA/PyTorch (If you want to train the model, you might need up to 11GB VRAM; 8GB might work too if you lower the batch-size)  
@@ -159,9 +159,12 @@ python run_inference.py data/datasets/AFLW2000 -o data/output_2
 ```
 
 The prediction grid is structured as follows:  
+
+|---|---|---|
 |sn+sc|sc  |ln+sc|  
 |sn   |None|ln   |  
 |sn+lc|lc  |ln+lc|  
+|---|---|---|
 
 with sn=smaller nose, ln=larger nose, sc=smaller chin, lc=larger chin.
 
