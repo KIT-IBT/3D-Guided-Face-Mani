@@ -1,17 +1,16 @@
 # 3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery
-This repository contains the code and the download links to run the generator G on samples of the AFLW2000 dataset.
+This repository yields the code to the corresponding paper *3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery*
+(Submitted to IEEE Transactions on Image Processing). 
 
 *Work in progress!!!*
-
-ToDO: Add script for training
 
 
 ## Requirements
 To install and run our scripts you need:
-	- Matlab (If you don't have a licence, there might be a workaround (see below))
-	- A python environment like anaconda
-	- A Nvidia GPU with CUDA/PyTorch (If you want to train the model, you might need up to 11GB VRAM; 8GB might work too if you lower the batch-size)
-	- Time to install and download all the submodules, data and config files that this repo requires :)
+	- Matlab (If you don't have a licence, there might be a workaround (see below))  
+	- A python environment like anaconda  
+	- A Nvidia GPU with CUDA/PyTorch (If you want to train the model, you might need up to 11GB VRAM; 8GB might work too if you lower the batch-size)  
+	- Time to install and download all the submodules, data and config files that this repo requires :)  
 
 
 ## Install
