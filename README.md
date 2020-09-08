@@ -160,13 +160,11 @@ python run_inference.py data/datasets/AFLW2000 -o data/output_2
 
 The prediction grid is structured as follows:  
 
-|---|---|---|
-|sn+sc|sc  |ln+sc|  
-|---|---|---|
-|sn   |None|ln   |  
-|---|---|---|
-|sn+lc|lc  |ln+lc|  
-|---|---|---|
+| --- | --- | --- |
+| sn+sc | sc | ln+sc |  
+| sn | None| ln |  
+| sn+lc | lc | ln+lc |  
+| --- | --- | --- |
 
 with sn=smaller nose, ln=larger nose, sc=smaller chin, lc=larger chin.
 
