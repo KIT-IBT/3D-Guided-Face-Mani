@@ -169,7 +169,7 @@ The prediction grid is structured as follows:
 with sn=smaller nose, ln=larger nose, sc=smaller chin, lc=larger chin.
 
 # DOI
-[![DOI](https://zenodo.org/badge/291075337.svg)](https://zenodo.org/badge/latestdoi/291075337)
+[![zenodo 4006290](https://user-images.githubusercontent.com/70153727/116559709-004c6480-a901-11eb-8a6b-ce074f460229.png)](https://doi.org/10.5281/zenodo.4006290)
 
 # Citation
 ToDo
