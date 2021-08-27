@@ -1,9 +1,6 @@
 # 3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery
-This repository yields the code to the corresponding paper *3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery*  
-(Submitted to IEEE Transactions on Image Processing). 
-
-*Work in progress!!!*
-
+This repository yields the code to the corresponding paper *3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome after Cranio-Maxillofacial Surgery
+(Pubilished at IEEE Transactions on Image Processing). 
 
 ## Requirements
 To install and run our scripts you need:  
@@ -172,4 +169,6 @@ with sn=smaller nose, ln=larger nose, sc=smaller chin, lc=larger chin.
 [![zenodo 4006290](https://user-images.githubusercontent.com/70153727/116559709-004c6480-a901-11eb-8a6b-ce074f460229.png)](https://doi.org/10.5281/zenodo.4006290)
 
 # Citation
-ToDo
+If you use this software, please cite it as follows:
+
+R. Andlauer and A. Wachter et al., "3D-Guided Face Manipulation of 2D Images for the Prediction of Post-Operative Outcome After Cranio-Maxillofacial Surgery," in IEEE Transactions on Image Processing, vol. 30, pp. 7349-7363, 2021, doi: 10.1109/TIP.2021.3096081.
